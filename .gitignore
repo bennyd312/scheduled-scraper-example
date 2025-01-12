@@ -1,0 +1,6 @@
+.serverless
+venv
+.idea
+.cache
+.DS_Store
+.env

@@ -1,0 +1,20 @@
+service: custom-scraping
+
+provider:
+  environment:
+    ENV: ${self:provider.stage}
+  name: aws
+  region: us-west-2
+  runtime: python3.11
+  stage: ${opt:stage, "dev"}
+
+functions:
+  scraper:
+    memorySize: 256
+    timeout: 60
+    image:
+      uri: <aws-account-id>.dkr.ecr.us-west-2.amazonaws.com/custom-scraping-python:latest
+      command:
+        - scrapers/scraper.handler
+      events:
+        - schedule: rate(1 day)

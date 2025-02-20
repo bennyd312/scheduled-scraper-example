@@ -4,7 +4,7 @@ provider:
   environment:
     ENV: ${self:provider.stage}
   name: aws
-  region: us-west-2
+  region: eu-north-1
   runtime: python3.11
   stage: ${opt:stage, "dev"}
 
@@ -13,7 +13,7 @@ functions:
     memorySize: 256
     timeout: 60
     image:
-      uri: <aws-account-id>.dkr.ecr.us-west-2.amazonaws.com/custom-scraping-python:latest
+      uri: 863518458210.dkr.ecr.eu-north-1.amazonaws.com/custom-scraping-python:latest
       command:
         - scrapers/scraper.handler
       events:

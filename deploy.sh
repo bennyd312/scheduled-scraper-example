@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ACCOUNT_ID=$1
-REGION=us-west-2
+REGION=eu-north-1
 REPO_NAME=custom-scraping-python
 
 echo "command - aws ecr get-login-password --region $REGION | docker login --username AWS --password-stdin $ACCOUNT_ID.dkr.ecr.$REGION.amazonaws.com"
